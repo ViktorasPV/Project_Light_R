@@ -1,0 +1,1 @@
+col = make_color_hsv(random(360), 255, 255);

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"fx_spawn",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"fx_spawn",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
