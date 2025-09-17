@@ -4,7 +4,7 @@ if (!variable_instance_exists(id, "creator")) {
 
 shot_exist = true;
 
-damage = 1;
+damage = 2.5;
 
 parried = false;
 
