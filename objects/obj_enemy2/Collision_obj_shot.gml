@@ -4,7 +4,7 @@ if (other.parried = true && alarm[1] < 0) {
     other.image_angle = irandom(360);
 }
     
-    audio_play_sound(snd_enemy_hit, 5, false);
+    audio_play_sound(snd_enemy_hit, 3, false);
     audio_sound_pitch(snd_enemy_hit, random_range(0.9, 1.15));
     shot_exist = false;
     hp -= other.damage;

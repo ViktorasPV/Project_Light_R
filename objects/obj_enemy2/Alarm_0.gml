@@ -1,5 +1,6 @@
 if (instance_exists(obj_player) && distance_to_object(obj_player) < distance_to_player && shot_exist == false)
 {
+        
         audio_play_sound(snd_shot_creation, 5, false);
         audio_sound_pitch(snd_shot_creation, random_range(0.9, 1.15));
         sprite_index = spr_enemy2_a;
