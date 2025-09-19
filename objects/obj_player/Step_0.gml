@@ -46,7 +46,7 @@ else
 }
 
 // ATTACK
-if (mouse_check_button_pressed(mb_left))
+if (mouse_check_button_pressed(mb_left ) & !instance_exists(obj_attack))
 {
     audio_play_sound(snd_sword_swing, 5, false);
     audio_sound_pitch(snd_sword_swing, random_range(0.9, 1.15));
@@ -56,7 +56,7 @@ if (mouse_check_button_pressed(mb_left))
 }
 
 // PARRY
-if (mouse_check_button_pressed(mb_right))
+if (mouse_check_button_pressed(mb_right) && !instance_exists(obj_parry))
 {
     audio_play_sound(snd_sword_swing, 5, false);
     audio_sound_pitch(snd_sword_swing, random_range(0.9, 1.15));
