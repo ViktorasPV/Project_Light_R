@@ -46,8 +46,11 @@ else
 }
 
 // ATTACK
-if (mouse_check_button_pressed(mb_left ) & !instance_exists(obj_attack))
+if (mouse_check_button_pressed(mb_left ) & can_attack = true)
 {
+    
+    can_attack = false;
+    alarm[1] = 30;
     audio_play_sound(snd_sword_swing, 5, false);
     audio_sound_pitch(snd_sword_swing, random_range(0.9, 1.15));
     var inst = instance_create_depth(x, y, depth, obj_attack);
@@ -58,6 +61,8 @@ if (mouse_check_button_pressed(mb_left ) & !instance_exists(obj_attack))
 // PARRY
 if (mouse_check_button_pressed(mb_right) && !instance_exists(obj_parry))
 {
+    can_attack = false;
+    alarm[1] = 30;
     audio_play_sound(snd_sword_swing, 5, false);
     audio_sound_pitch(snd_sword_swing, random_range(0.9, 1.15));
     var inst = instance_create_depth(x, y, depth, obj_parry);

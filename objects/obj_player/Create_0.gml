@@ -4,6 +4,8 @@ hp = 10;
 hp_total = hp;
 damage = 1;
 
+can_attack = true;
+
 facing = 0;
 
 tilemap = layer_tilemap_get_id("Tiles_Col");
