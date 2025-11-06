@@ -1,0 +1,1 @@
+scr_text("Liūdna vieta...");

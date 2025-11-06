@@ -1,8 +1,21 @@
+depth = -99;
+
+if (!surface_exists(light_surface) ||
+    surface_get_width(light_surface)  != camera_get_view_width(view_camera[0]) + 2 ||
+    surface_get_height(light_surface) != camera_get_view_height(view_camera[0]) + 2) {
+        
+    if (surface_exists(light_surface)) surface_free(light_surface);
+    light_surface = surface_create(
+        camera_get_view_width(view_camera[0]) + 2,
+        camera_get_view_height(view_camera[0]) + 2
+    );
+}
+
 if (surface_exists(light_surface)) {
-    var cx = round(camera_get_view_x(view_camera[0])-2);
-    var cy = round(camera_get_view_y(view_camera[0])-2);
+    var cx = floor(camera_get_view_x(view_camera[0]));
+    var cy = floor(camera_get_view_y(view_camera[0]));
     
-    surface_set_target(light_surface)
+    surface_set_target(light_surface);
     draw_clear_alpha(c_black, 0.9);
     gpu_set_blendmode(bm_add);
     
@@ -72,11 +85,6 @@ if (surface_exists(light_surface)) {
     surface_reset_target();
     
     gpu_set_blendmode_ext(bm_zero, bm_subtract);
-    
-    draw_surface(light_surface, cx, cy)
-    
+    draw_surface_ext(light_surface, cx - 1, cy - 1, 1.01, 1.01, 0, c_white, 1);
     gpu_set_blendmode(bm_normal);
-}    else {
-        light_surface = surface_create(camera_get_view_width(view_camera[0]),
-        camera_get_view_height(view_camera[0])+4);
-    };
+}

@@ -1,7 +1,7 @@
 var _dx = 16;
 var _dy = 16;
 var _barw = 256;
-var _barh = 32
+var _barh = 32;
 
 // Properties
 draw_set_font(Font1);
@@ -19,3 +19,9 @@ draw_text(_dx + _barw / 2, _dy + _barh / 2, "HP");
 // XP
 var _xp_barw = _barw * (xp / xp_require);
 _dy += _barh + 8;
+
+draw_set_font(global.font_main);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+draw_set_color(c_white);
+draw_set_alpha(1);

@@ -1,1 +1,1 @@
-audio_stop_sound(snd_FlowyFalls);
+audio_stop_all();

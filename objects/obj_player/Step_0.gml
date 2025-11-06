@@ -19,6 +19,13 @@ if (kb_x != 0 || kb_y != 0) {
 move_and_collide(_hor * move_speed, _ver * move_speed, tilemap, undefined, undefined, undefined, move_speed, move_speed);
 
     var dir_to_mouse = point_direction(x, y, mouse_x, mouse_y);
+//pause
+if instance_exists(obj_pauser) {
+	move_speed = 0;
+}
+else {
+	move_speed = 1;
+}
 
 if (_hor != 0 or _ver != 0)
 {
@@ -62,7 +69,7 @@ if (mouse_check_button_pressed(mb_left ) & can_attack = true)
 if (mouse_check_button_pressed(mb_right) && !instance_exists(obj_parry))
 {
     can_attack = false;
-    alarm[1] = 30;
+    alarm[1] = 60;
     audio_play_sound(snd_sword_swing, 5, false);
     audio_sound_pitch(snd_sword_swing, random_range(0.9, 1.15));
     var inst = instance_create_depth(x, y, depth, obj_parry);
