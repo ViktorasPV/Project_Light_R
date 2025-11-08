@@ -7,7 +7,20 @@ switch(_text_id) {
 	scr_text("Hi! Nigg");
 	scr_text("Hi! Nigg");
 	scr_text("Hi! Nigg");
+        scr_option("Hello", "npc_1 - Hello");
+        scr_option("Fuck off", "npc_1 - Fuck off");   
 	break;
+    case "npc_1 - Hello":
+        
+        scr_text("Hi!");
+        
+        break;
+    
+    case "npc_1 - Fuck off":
+        
+        scr_text("Fuck you too");
+        
+        break;
 	
 	case "npc_2":
 	scr_text("Hi! Nigge");
