@@ -4,7 +4,7 @@ function scr_game_text(_text_id){
 switch(_text_id) {
 	
 	case "npc_1":
-	scr_text("Sveikas!");
+	scr_text("Sveikas!", "Player");
 	scr_text("Čia yra mažas bet jaukus miestelis");
 	scr_text("Ar tau patinka šis miestas");
         scr_option("Taip!", "npc_1 - Hello");

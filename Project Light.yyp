@@ -122,8 +122,9 @@
     {"id":{"name":"spr_shot_hit_effect_","path":"sprites/spr_shot_hit_effect_/spr_shot_hit_effect_.yy",},},
     {"id":{"name":"spr_shot","path":"sprites/spr_shot/spr_shot.yy",},},
     {"id":{"name":"spr_speakblock","path":"sprites/spr_speakblock/spr_speakblock.yy",},},
-    {"id":{"name":"spr_textbox_1","path":"sprites/spr_textbox_1/spr_textbox_1.yy",},},
     {"id":{"name":"spr_textbox_arrow","path":"sprites/spr_textbox_arrow/spr_textbox_arrow.yy",},},
+    {"id":{"name":"spr_textbox_option","path":"sprites/spr_textbox_option/spr_textbox_option.yy",},},
+    {"id":{"name":"spr_textbox_red","path":"sprites/spr_textbox_red/spr_textbox_red.yy",},},
     {"id":{"name":"spr_textbox","path":"sprites/spr_textbox/spr_textbox.yy",},},
     {"id":{"name":"spr_tileset","path":"sprites/spr_tileset/spr_tileset.yy",},},
     {"id":{"name":"spr_torch_1","path":"sprites/spr_torch_1/spr_torch_1.yy",},},
@@ -138,10 +139,10 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
+    {"roomId":{"name":"Room_textbox_test","path":"rooms/Room_textbox_test/Room_textbox_test.yy",},},
     {"roomId":{"name":"Room_2","path":"rooms/Room_2/Room_2.yy",},},
     {"roomId":{"name":"Room_menu","path":"rooms/Room_menu/Room_menu.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
-    {"roomId":{"name":"Room_textbox_test","path":"rooms/Room_textbox_test/Room_textbox_test.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

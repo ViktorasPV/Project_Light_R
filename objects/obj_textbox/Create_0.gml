@@ -4,7 +4,7 @@ textbox_width  = 223;
 border = 8;
 line_sep = 14;
 line_width = textbox_width - border*2;
-txtb_spr = spr_textbox;
+txtb_spr[0] = spr_textbox;
 txtb_img = 0;
 txtb_img_spd = 6/60;
 
@@ -20,7 +20,7 @@ draw_char = 0;
 text_spd = 1;
 
 //options
-txtb_spr_1 = spr_textbox_1;
+txtb_spr_1 = spr_textbox_option;
 option[0] = ""
 option_number = 0
 option_link_id[0] = -1
