@@ -80,6 +80,16 @@ if (surface_exists(light_surface)) {
             draw_circle_color(x-cx, y-cy, 200, c_aqua, c_black, 0);
         }
     }
+    if instance_exists(obj_mentor) {
+        with(obj_mentor) {
+            draw_circle_color(x-cx, y-cy, 36, c_white, c_black, 0);
+        }
+    }
+    if instance_exists(obj_town_rock) {
+        with(obj_town_rock) {
+            draw_circle_color(x-cx, y-cy, 64, c_purple, c_black, 0);
+        }
+    }
     
     
     surface_reset_target();

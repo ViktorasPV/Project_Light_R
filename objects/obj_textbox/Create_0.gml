@@ -1,4 +1,4 @@
-// textbox params (move here if not already in Create)
+// textbox params
 textbox_height = 63;
 textbox_width  = 223;
 border = 8;
@@ -8,11 +8,14 @@ txtb_spr = spr_textbox;
 txtb_img = 0;
 txtb_img_spd = 6/60;
 
-// typing / pages
+// the text
 page = 0;
 page_number = 0;
 text[0] = ""
 text_length[0] = string_length(text[0]);
+char[0, 0] = "";
+char_x[0, 0] = 0;
+char_y[0, 0] = 0;
 draw_char = 0;
 text_spd = 1;
 
@@ -25,3 +28,7 @@ option_pos = 0
 
 
 setup = false;
+
+//effects
+scr_set_defaults_for_text();
+last_free_space = 0;

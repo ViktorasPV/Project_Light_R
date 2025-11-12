@@ -19,9 +19,68 @@ if setup == false {
     draw_set_valign(fa_top);
     draw_set_halign(fa_left);
 
+
     for (var p = 0; p < page_number; p++) {
         text_length[p] = string_length(text[p]);
         text_x_offset[p] = 65;
+        
+        //setting individual character and finding where the lines of text should break
+        for (var c = 0; c < text_length[p]; c++)
+        {
+            var _char_pos = c+1;
+            
+            //store individual characters in the "char" array
+            char[c, p] = string_char_at(text[p], _char_pos);
+            
+            //get current width of the line
+            var _txt_up_to_char = string_copy(text[p], 1, _char_pos);
+            var _current_txt_w = string_width(_txt_up_to_char) - string_width(char[c, p]);
+            
+            //get the last free space
+            if char[c, p] == " " {last_free_space = _char_pos+1};
+                
+            //get the line breaks 
+            if _current_txt_w - line_break_offset[p] > line_width
+            {
+                line_break_pos[line_break_num [p], p] = last_free_space;
+                line_break_num[p]++;
+                var _txt_up_to_last_space = string_copy( text[p], 1, last_free_space);
+                var _last_free_space_string = string_char_at( text[p], last_free_space);
+                line_break_offset[p] = string_width(_txt_up_to_last_space) - string_width(_last_free_space_string);
+            }
+            
+        }
+        
+        //getting each characters coordinates
+        for (var c = 0; c < text_length[p]; c++)
+        {
+            
+            var _char_pos = c+1;
+            var _txt_x = textbox_x + text_x_offset[p] + border;
+            var _txt_y = textbox_y;
+            //get current width of the line
+            var _txt_up_to_char = string_copy(text[p], 1, _char_pos);
+            var _current_txt_w = string_width(_txt_up_to_char) - string_width(char[c, p]);
+            var _txt_line = 0;
+            
+            //compensate for string breaks
+            for (var lb = 0; lb < line_break_num[p]; lb++)
+            {
+                if _char_pos >= line_break_pos[lb, p]
+                {
+                    var _str_copy = string_copy(text[p], line_break_pos[lb, p], _char_pos-line_break_pos[lb, p]);
+                    _current_txt_w = string_width(_str_copy);
+                    
+                    //record the "line" this character should be on
+                    _txt_line = lb+1; // +1 since lb starts at 0
+                }
+            }
+            
+            
+            //add to the x and y coordinates base on the new info
+            char_x[c, p] = _txt_x + _current_txt_w;
+            char_y[c, p] = _txt_y + _txt_line*line_sep;
+        }
     }
 }
 
@@ -55,7 +114,7 @@ if accept_key {
 
 // --------------------------Draw the textbox---------------------------------------
 var _txtb_x = textbox_x + text_x_offset[page];
-var _txtb_y = textbox_y;
+var _txtb_y = textbox_y - 6;
 
 txtb_img += txtb_img_spd;
 var txtb_spr_w = sprite_get_width(txtb_spr);
@@ -94,7 +153,7 @@ if (draw_char == text_length[page] && page == page_number - 1)
         //the arrow
         if option_pos == op
         {
-            draw_sprite(spr_textbox_arrow, 0, _txtb_x, _txtb_y - _op_space*option_number + _op_space*op)   
+            draw_sprite(spr_textbox_arrow, 1, _txtb_x, _txtb_y - _op_space*option_number + _op_space*op)   
         }
         
         //the option text
@@ -103,13 +162,9 @@ if (draw_char == text_length[page] && page == page_number - 1)
 }
 
 // Draw the text
-var _drawtext = string_copy(text[page], 1, draw_char);
-draw_text_ext(
-    _txtb_x + border,
-    _txtb_y + border,
-    _drawtext,
-    line_sep,
-    line_width
-);
+for(var c = 0; c < draw_char; c++)
+{
+    draw_text(char_x[c, page], char_y[c, page], char[c, page]);
+}
 
 display_set_gui_size(prev_gui_w, prev_gui_h);
