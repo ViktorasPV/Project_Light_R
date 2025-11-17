@@ -23,20 +23,20 @@ if setup == false {
     for (var p = 0; p < page_number; p++) {
         text_length[p] = string_length(text[p]);
         
-        //character on the left
-        text_x_offset[page] = 111;
-        portrait_x_offset[p] = 14;
-        
-        //character on the right
-        if speaker_side[p] == -1 { 
-            text_x_offset[page] = 14;
-            portrait_x_offset[p] = 302;
-        }
-        
-        //no character
-        
-        if speaker_side[p] == noone {
+
+         if speaker_side[p] == -1 {
+            // Character on the right
+            text_x_offset[p] = 14;
+            portrait_x_offset[p] = 272;
+        } 
+        else if speaker_side[p] == noone {
+            // No character
             text_x_offset[p] = 65;
+            // Note: portrait_x_offset[p] not set here (assuming no portrait, so default or 0 is fine)
+        } else {
+            // Character on the left (default case)
+            text_x_offset[p] = 111;
+            portrait_x_offset[p] = 14;
         }
         
         
@@ -103,11 +103,30 @@ if setup == false {
 }
 
 // ----------------------------Typing text-----------------------------------
+if text_pause_timer <= 0
+{
 if draw_char < text_length[page] {
     draw_char += text_spd;
     draw_char = clamp(draw_char, 0, text_length[page]);
+    var _check_char = string_char_at(text[page], draw_char);
+    if _check_char == "." || _check_char == "?"
+    {
+        text_pause_timer = text_pause_time;
+    }
+    else {
+        if snd_count < snd_delay {
+            snd_count++;
+            }
+        else {
+            snd_count = 0;
+            audio_play_sound(snd[page], 8, false);
+        }
+    }
 }
-
+}
+else {
+        text_pause_timer--;
+    }
 // --------------------------Flip through pages--------------------------------
 if accept_key {
     if draw_char == text_length[page] {
@@ -143,10 +162,12 @@ if speaker_sprite[page] != noone
 {
     sprite_index = speaker_sprite[page];
     var _speaker_x = textbox_x + portrait_x_offset[page];
-    if speaker_side[page] == -1 (_speaker_x += sprite_width);
+    if (speaker_side[page] == -1){
+        _speaker_x += sprite_width;
+    }
         // draw the speaker
-    draw_sprite_ext(txtb_spr[page], txtb_img, textbox_x + portrait_x_offset[page], textbox_y, sprite_width/txtb_spr_w, sprite_height/txtb_spr_h, 0, c_white, 1);
-    draw_sprite_ext(sprite_index, image_index, _speaker_x, textbox_y, speaker_side[page], 1, 0, c_white, 1);
+    draw_sprite_ext(txtb_spr[page], txtb_img, textbox_x + portrait_x_offset[page], textbox_y - 8, sprite_width/txtb_spr_w, sprite_height/txtb_spr_h, 0, c_white, 1);
+    draw_sprite_ext(sprite_index, image_index, _speaker_x, textbox_y - 8, speaker_side[page], 1, 0, c_white, 1);
 }
 
 // Background (note: using GUI coords directly)
@@ -177,7 +198,7 @@ if (draw_char == text_length[page] && page == page_number - 1)
         
         //the option box
         var _o_w = string_width(option[op]) + _op_bord * 2;
-        draw_sprite_ext(txtb_spr[page], txtb_img, _txtb_x + 16, _txtb_y - _op_space*option_number + _op_space*op, _o_w/txtb_spr_w, (_op_space-3)/txtb_spr_h, 0, c_white, 1);
+        draw_sprite_ext(txtb_spr_1, txtb_img, _txtb_x + 16, _txtb_y - _op_space*option_number + _op_space*op, _o_w/txtb_spr_w, (_op_space-3)/txtb_spr_h, 0, c_white, 1);
         
         //the arrow
         if option_pos == op

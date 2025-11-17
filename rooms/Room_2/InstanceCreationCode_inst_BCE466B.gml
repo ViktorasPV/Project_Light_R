@@ -1,1 +1,1 @@
-scr_text("Liūdna vieta...");
+scr_text("Liūdna vieta...", "Sword", noone);

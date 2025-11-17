@@ -6,10 +6,12 @@ function scr_set_defaults_for_text() {
     txtb_spr[page_number] = spr_textbox; 
     speaker_sprite[page_number] = noone;
     speaker_side[page_number] = 1;
+    snd[page_number] = snd_talking_mid;
 }
 
 //@param text
 //@param [character]
+///@param [side]
 function scr_text(_text){
 	
     scr_set_defaults_for_text();
@@ -21,13 +23,39 @@ function scr_text(_text){
         switch(argument[1])
         {
             
+            case "Sword":
+            txtb_spr[page_number] = spr_textbox;
+                break;
+            
             case "Player":
+            speaker_sprite[page_number] = spr_dlg_player_idle;
+            txtb_spr[page_number] = spr_textbox;
+                snd[page_number] = snd_talking_high;
+                break;
+            case "Player_confused":
+            speaker_sprite[page_number] = spr_dlg_player_confused;
+            txtb_spr[page_number] = spr_textbox;
+                snd[page_number] = snd_talking_high;
+                break;
+            case "Player_suprised":
             speaker_sprite[page_number] = spr_dlg_player_suprised;
             txtb_spr[page_number] = spr_textbox;
+                break;
+                
+                case "Mentor":
+                    speaker_sprite[page_number] = spr_dlg_mentor_idle;
+                    txtb_spr[page_number] = spr_textbox_red;
+                    snd[page_number] = snd_talking_low; 
                 break;
         }
     }
 	
+    //side the character is on
+    if argument_count > 2 {
+        speaker_side[page_number] = argument[2];
+    }
+    
+    
 	page_number++;
 	
 }

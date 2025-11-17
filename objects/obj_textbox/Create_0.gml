@@ -9,6 +9,7 @@ txtb_img = 0;
 txtb_img_spd = 6/60;
 
 // the text
+text_x_offset[0] = 0;
 page = 0;
 page_number = 0;
 text[0] = ""
@@ -29,6 +30,12 @@ option_pos = 0
 
 setup = false;
 
+//sound
+snd_delay = 4;
+snd_count = snd_delay;
+
 //effects
 scr_set_defaults_for_text();
 last_free_space = 0;
+text_pause_timer = 0;
+text_pause_time = 30;
