@@ -112,6 +112,9 @@ if draw_char < text_length[page] {
     if _check_char == "." || _check_char == "?"
     {
         text_pause_timer = text_pause_time;
+        if !audio_is_playing(snd[page]) { 
+            audio_play_sound(snd[page], 8, false);
+        }
     }
     else {
         if snd_count < snd_delay {
@@ -214,7 +217,29 @@ if (draw_char == text_length[page] && page == page_number - 1)
 // Draw the text
 for(var c = 0; c < draw_char; c++)
 {
-    draw_text(char_x[c, page], char_y[c, page], char[c, page]);
+    
+    // ------special stuff----------
+    //wavey text
+    var _float_y = 0;
+    if float_text[c, page] == true {
+        float_dir[c, page] += -6;
+        _float_y = dsin(float_dir[c, page]) * 1;
+    }
+    // shake text
+    var _shake_x = 0;
+    var _shake_y = 0;
+    if shake_text[c, page] == true 
+    {
+        shake_timer[c, page]--;
+        if shake_timer[c, page] <= 0 {
+            shake_timer[c, page] = irandom_range(4, 8);
+            shake_dir[c, page] = irandom(360);
+        }
+        _shake_x = lengthdir_x(1, shake_dir[c, page]);
+        _shake_y = lengthdir_y(1, shake_dir[c, page]);
+    }
+    
+    draw_text_color(char_x[c, page], char_y[c, page] + _float_y, char[c, page], col_1[c, page], col_2[c, page], col_3[c, page], col_4[c, page], 1);
 }
 
 display_set_gui_size(prev_gui_w, prev_gui_h);

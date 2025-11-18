@@ -92,6 +92,7 @@
     {"id":{"name":"snd_talking_high","path":"sounds/snd_talking_high/snd_talking_high.yy",},},
     {"id":{"name":"snd_talking_low","path":"sounds/snd_talking_low/snd_talking_low.yy",},},
     {"id":{"name":"snd_talking_mid","path":"sounds/snd_talking_mid/snd_talking_mid.yy",},},
+    {"id":{"name":"snd_talking_sword","path":"sounds/snd_talking_sword/snd_talking_sword.yy",},},
     {"id":{"name":"spr_attack","path":"sprites/spr_attack/spr_attack.yy",},},
     {"id":{"name":"spr_blob","path":"sprites/spr_blob/spr_blob.yy",},},
     {"id":{"name":"spr_box","path":"sprites/spr_box/spr_box.yy",},},
@@ -143,9 +144,9 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
+    {"roomId":{"name":"Room_menu","path":"rooms/Room_menu/Room_menu.yy",},},
     {"roomId":{"name":"Room_2","path":"rooms/Room_2/Room_2.yy",},},
     {"roomId":{"name":"Room_textbox_test","path":"rooms/Room_textbox_test/Room_textbox_test.yy",},},
-    {"roomId":{"name":"Room_menu","path":"rooms/Room_menu/Room_menu.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "templateType":"game",
