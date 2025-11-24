@@ -90,6 +90,11 @@ if (surface_exists(light_surface)) {
             draw_circle_color(x-cx, y-cy, 64, c_purple, c_black, 0);
         }
     }
+    if instance_exists(obj_enemy3) {
+        with(obj_enemy3) {
+            draw_circle_color(x-cx, y-cy, 64, c_orange, c_black, 0);
+        }
+    }
     
     
     surface_reset_target();
