@@ -27,6 +27,7 @@ else {
 	move_speed = 1;
 }
 
+
 if (_hor != 0 or _ver != 0)
 {
     // Walking → use walk animations FACING mouse

@@ -94,11 +94,20 @@ function scr_text(_text){
             speaker_sprite[page_number] = spr_dlg_player_suprised;
             txtb_spr[page_number] = spr_textbox;
                 break;
+            case "Player_sad":
+            speaker_sprite[page_number] = spr_dlg_player_sad;
+            txtb_spr[page_number] = spr_textbox;
+                break;
                 
                 case "Mentor":
                     speaker_sprite[page_number] = spr_dlg_mentor_idle;
                     txtb_spr[page_number] = spr_textbox_red;
                     snd[page_number] = snd_talking_low; 
+                break;
+            
+            case "Npc_1":
+            txtb_spr[page_number] = spr_textbox;
+            snd[page_number] = snd_talking_mid; 
                 break;
         }
     }

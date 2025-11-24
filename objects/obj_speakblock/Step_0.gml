@@ -8,5 +8,15 @@ var dist = point_distance(x, y, obj_player.x, obj_player.y);
 
 if (dist < 50 && keyboard_check_pressed(ord("E")))
 {	
-	create_textbox(text_id);
+	if (!one_time) {
+    // normal reusable
+    create_textbox(text_id);
+}
+else {
+    // one-time
+    if (!passed) {
+        create_textbox(text_id);
+        passed = true;
+    }
+}
 }

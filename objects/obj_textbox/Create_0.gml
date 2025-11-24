@@ -1,3 +1,8 @@
+if (instance_number(obj_textbox) > 1) {
+    instance_destroy();
+    exit;
+}
+
 // textbox params
 textbox_height = 63;
 textbox_width  = 223;

@@ -95,6 +95,11 @@ if (surface_exists(light_surface)) {
             draw_circle_color(x-cx, y-cy, 64, c_orange, c_black, 0);
         }
     }
+    if instance_exists(obj_npc1) {
+        with(obj_npc1) {
+            draw_circle_color(x-cx, y-cy, 64, c_blue, c_black, 0);
+        }
+    }
     
     
     surface_reset_target();

@@ -44,5 +44,22 @@ switch(_text_id) {
 	scr_text("Hi!");
 	scr_text("Hi!");
 	break;
+
+    case "npc_3":
+    scr_text("Sako kad miestas čia tūrėtų būti", "Npc_1", noone);
+        scr_text_color(0, 100, c_blue, c_blue, c_blue, c_blue);
+    scr_text("Bet nieko nėra", "Npc_1", noone);
+        scr_text_color(0, 100, c_blue, c_blue, c_blue, c_blue);
+    scr_text("Nu įdomiai", "Npc_1", noone);    
+        scr_text_color(0, 100, c_blue, c_blue, c_blue, c_blue);
+        
+    case "seeing_flowers":
+        scr_text("Bent kažkiek šviesos pagaliau...", "Player_sad"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);    
+        
+        
+        
+        
+        
 }
 }
