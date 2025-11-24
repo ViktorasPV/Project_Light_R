@@ -12,3 +12,4 @@ kb_y = 0;
 my_layer = id.layer;        // actual instance layer
 if (my_layer == -1) my_layer = "Instances";  // fallback name
     
+running = false;
