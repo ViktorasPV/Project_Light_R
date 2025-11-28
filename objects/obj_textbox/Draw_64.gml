@@ -15,6 +15,13 @@ textbox_y = 165;        // down from top of view (was cam_y + 144 in world-space
 // ---------------------------Setup-------------------------------
 if setup == false {
     setup = true;
+    
+    if (page_number == 0) {
+        instance_destroy();
+        exit;
+    }
+    
+    
     draw_set_font(global.font_main);
     draw_set_valign(fa_top);
     draw_set_halign(fa_left);

@@ -10,8 +10,8 @@
   "name":"obj_charge_effect",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Enemy stuff",
+    "path":"folders/Objects/Enemy stuff.yy",
   },
   "parentObjectId":null,
   "persistent":false,

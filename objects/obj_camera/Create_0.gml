@@ -1,4 +1,4 @@
-shake_power = 3;
+shake_power = 10;
 shake_value = 0;
 shake_decay = 0.05;
 

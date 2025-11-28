@@ -10,8 +10,8 @@
   "name":"obj_speakblock",
   "overriddenProperties":[],
   "parent":{
-    "name":"Dialougue systems",
-    "path":"folders/Dialougue systems.yy",
+    "name":"Interactable effects",
+    "path":"folders/Objects/Interactable effects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

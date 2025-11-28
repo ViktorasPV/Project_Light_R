@@ -1,6 +1,16 @@
+// obj_textbox Create Event (Top of the file)
+
+// Check if there are other textboxes already existing
 if (instance_number(obj_textbox) > 1) {
-    instance_destroy();
-    exit;
+    var _my_id = id; // Store the ID of this NEW textbox
+    
+    // Loop through ALL textboxes
+    with (obj_textbox) {
+        // If this textbox is NOT the one we just created...
+        if (id != _my_id) {
+            instance_destroy(); // Destroy the OLD one
+        }
+    }
 }
 
 // textbox params

@@ -13,8 +13,8 @@
   "name":"obj_enemy_ranged_parent",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Enemy stuff",
+    "path":"folders/Objects/Enemy stuff.yy",
   },
   "parentObjectId":null,
   "persistent":false,

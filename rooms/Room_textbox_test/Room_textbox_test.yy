@@ -26,7 +26,7 @@
   "name":"Room_textbox_test",
   "parent":{
     "name":"Dialougue systems",
-    "path":"folders/Dialougue systems.yy",
+    "path":"folders/Objects/Dialougue systems.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

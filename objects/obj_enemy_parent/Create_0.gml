@@ -14,7 +14,7 @@ kb_y = 0;
 
 dash_range = 40;       // Distance to trigger dash
 dash_speed = 3;        // Dash movement speed
-dash_windup = 15;      // Frames before dash happens
+dash_windup = 20;      // Frames before dash happens
 dash_timer = 0;        // Counts down dash duration
 windup_timer = 0;      // Counts down wind-up
 can_dash = true;       // Prevents spam

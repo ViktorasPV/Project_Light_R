@@ -98,6 +98,12 @@ if (surface_exists(light_surface)) {
             draw_circle_color(x-cx, y-cy, 64, c_blue, c_black, 0);
         }
     }
+    if instance_exists(obj_sword) {
+        with(obj_sword) {
+            draw_circle_color(x-cx, y-cy, 256, c_aqua, c_black, 0);
+        }
+    }
+    
     
     
     surface_reset_target();

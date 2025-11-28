@@ -1,6 +1,8 @@
 paused = false;
 normal_fps = 60; // your ROOM SPEED here (60 is standard)
 
+global.cutscene = false;
+
 var charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZĄČĘĖĮŠŲŪŽabcdefghijklmnopqrstuvwxyząčęėįšųūž0123456789!?.,:;-' "
 global.font_main = font_add_sprite_ext(spr_main_font, charset, true, 1);
 

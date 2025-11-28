@@ -1,5 +1,7 @@
 move_speed = 1;
 
+can_move = true;
+
 hp = 10;
 hp_total = hp;
 damage = 1;

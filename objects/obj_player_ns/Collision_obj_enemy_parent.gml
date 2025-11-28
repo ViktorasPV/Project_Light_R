@@ -1,3 +1,10 @@
+if (has_exclaimed_on_hit == false) {
+    text_id = "hit_by_enemy";
+    has_exclaimed_on_hit = true;
+    create_textbox(text_id);
+
+}
+
 if (alarm[0] < 0)
 {
 	hp-= other.damage;

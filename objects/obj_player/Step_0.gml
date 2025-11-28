@@ -2,8 +2,7 @@ var _hor = keyboard_check(ord("D")) - keyboard_check(ord("A"));
 var _ver = keyboard_check(ord("S")) - keyboard_check(ord("W"));
 
 
-
-if (kb_x != 0 || kb_y != 0) {
+    if (kb_x != 0 || kb_y != 0) {
     // Try moving with collision
     move_and_collide(kb_x, kb_y, [tilemap]); // tilemap = Tiles_Col's tilemap ID
 
@@ -77,4 +76,12 @@ if (mouse_check_button_pressed(mb_right) && !instance_exists(obj_parry))
     inst.image_angle = dir_to_mouse;
     inst.damage *= damage * 2;
 }
+
+if (!can_move) {
+    _hor = 0;
+    _ver = 0;
+}
+
+
+
 

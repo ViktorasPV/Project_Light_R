@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_textbox_functions",
   "parent":{
-    "name":"Dialougue systems",
-    "path":"folders/Dialougue systems.yy",
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

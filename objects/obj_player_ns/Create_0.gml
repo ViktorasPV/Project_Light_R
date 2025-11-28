@@ -1,6 +1,8 @@
 move_speed = 1;
 
-hp = 10;
+can_move = true;
+
+hp = 20;
 hp_total = hp;
 damage = 1;
 
@@ -13,6 +15,8 @@ tilemap = layer_tilemap_get_id("Tiles_Col");
 kb_x = 0;
 kb_y = 0;
 kb_timer = 0;
+
+hud_alpha = 1;
 
 /// Step Event of obj_player (knockback section)
 var steps = ceil(max(abs(kb_x), abs(kb_y))); // split movement into smaller steps
@@ -60,4 +64,6 @@ function add_xp(_xp_to_add)
 		damage += 0.8;
 	}
 }
+
+has_exclaimed_on_hit = false;
 

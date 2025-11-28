@@ -1,4 +1,5 @@
-text_id = "";
+text_id = ""; // defined in Variable Definitions
+active = true;
 
 passed = false;
 one_time = false;

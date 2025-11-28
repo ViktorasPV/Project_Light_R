@@ -26,7 +26,7 @@
   "origin":4,
   "parent":{
     "name":"Dialougue systems",
-    "path":"folders/Dialougue systems.yy",
+    "path":"folders/Objects/Dialougue systems.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

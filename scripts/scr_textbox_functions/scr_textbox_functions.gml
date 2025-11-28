@@ -98,6 +98,10 @@ function scr_text(_text){
             speaker_sprite[page_number] = spr_dlg_player_sad;
             txtb_spr[page_number] = spr_textbox;
                 break;
+            case "Player_happy":
+            speaker_sprite[page_number] = spr_dlg_player_happy;
+            txtb_spr[page_number] = spr_textbox;
+                break;
                 
                 case "Mentor":
                     speaker_sprite[page_number] = spr_dlg_mentor_idle;
