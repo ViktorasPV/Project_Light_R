@@ -203,9 +203,13 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"Room_2","path":"rooms/Room_2/Room_2.yy",},},
     {"roomId":{"name":"Room_menu","path":"rooms/Room_menu/Room_menu.yy",},},
+<<<<<<< HEAD
     {"roomId":{"name":"Room_sword","path":"rooms/Room_sword/Room_sword.yy",},},
+=======
+>>>>>>> 4524fa55310193f735d1bc78b6808a28265a4df8
     {"roomId":{"name":"Room_start","path":"rooms/Room_start/Room_start.yy",},},
     {"roomId":{"name":"Room_start_1","path":"rooms/Room_start_1/Room_start_1.yy",},},
+    {"roomId":{"name":"Room_sword","path":"rooms/Room_sword/Room_sword.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"Room_textbox_test","path":"rooms/Room_textbox_test/Room_textbox_test.yy",},},
     {"roomId":{"name":"Room_mentor","path":"rooms/Room_mentor/Room_mentor.yy",},},
