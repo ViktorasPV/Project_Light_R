@@ -16,6 +16,8 @@ kb_x = 0;
 kb_y = 0;
 kb_timer = 0;
 
+hud_alpha = 1;
+
 /// Step Event of obj_player (knockback section)
 var steps = ceil(max(abs(kb_x), abs(kb_y))); // split movement into smaller steps
 var step_x = kb_x / steps;

@@ -40,5 +40,5 @@
     "path":"sprites/spr_cutscene_trigger/spr_cutscene_trigger.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

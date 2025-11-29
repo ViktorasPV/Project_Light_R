@@ -16,7 +16,11 @@ textbox_y = 165;        // down from top of view (was cam_y + 144 in world-space
 if setup == false {
     setup = true;
     
+    // --- THE FIX ---
+    // If we destroy the textbox here, we MUST reset the GUI size first!
     if (page_number == 0) {
+        // Reset GUI size before destroying
+        display_set_gui_size(prev_gui_w, prev_gui_h); 
         instance_destroy();
         exit;
     }

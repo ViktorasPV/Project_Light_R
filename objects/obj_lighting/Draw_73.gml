@@ -57,8 +57,8 @@ if (surface_exists(light_surface)) {
         }
     }
     
-    if instance_exists(obj_torch) {
-        with(obj_torch) {
+    if instance_exists(obj_torch_purple) {
+        with(obj_torch_purple) {
             draw_circle_color(x-cx, y-cy, 24, c_orange, c_black, 0);
         }
     }
@@ -98,6 +98,11 @@ if (surface_exists(light_surface)) {
     if instance_exists(obj_npc1) {
         with(obj_npc1) {
             draw_circle_color(x-cx, y-cy, 64, c_blue, c_black, 0);
+        }
+    }
+    if instance_exists(obj_enemy1_corpses) {
+        with(obj_enemy1_corpses) {
+            draw_circle_color(x-cx, y-cy, 64, c_white, c_black, 0);
         }
     }
     

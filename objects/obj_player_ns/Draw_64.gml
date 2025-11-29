@@ -1,3 +1,6 @@
+draw_set_color(c_white);
+draw_set_alpha(1);
+
 // Only draw if there is something visible to save performance
 if (hud_alpha > 0) {
 

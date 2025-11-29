@@ -25,3 +25,6 @@ player_start_x = obj_player.x;
 
 fade_alpha = 0; // 0 = Transparent, 1 = White
 target_room = Room_sword; // Default, will be overwritten by trigger
+
+// Add this to existing variables
+fade_color = c_black; // Default to black

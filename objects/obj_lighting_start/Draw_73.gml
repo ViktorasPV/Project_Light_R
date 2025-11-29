@@ -55,12 +55,6 @@ if (surface_exists(light_surface)) {
         }
     }
     
-    if instance_exists(obj_torch) {
-        with(obj_torch) {
-            draw_circle_color(x-cx, y-cy, 24, c_orange, c_black, 0);
-        }
-    }
-    
     if instance_exists(obj_menu_player) {
         with(obj_menu_player) {
             draw_circle_color(x-cx, y-cy, 400, c_aqua, c_black, 0);

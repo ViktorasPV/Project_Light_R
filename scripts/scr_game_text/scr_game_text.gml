@@ -71,7 +71,7 @@ switch(_text_id) {
         
     case "first_enemy1":
         scr_text("Ehh... jūs mane girdėjot...?", "Player_confused");
-        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);    
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);   
         break;
     
     case "hit_by_enemy":
@@ -187,6 +187,93 @@ switch(_text_id) {
         scr_text("Ir jaučiu, kad ilgai būsim kartu vėl", "Player_sad"); 
         scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);    
         break;
+    
+    case "mentor_meet":
+        scr_text("Uhh...", "Player"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua); 
+        
+        break;
+    case "mentor_meet1":
+        scr_text("Hm?", "Mentor", -1);
+        scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+        scr_text("Kas jūs būtumėt?", "Player"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+        scr_text("Aš?", "Mentor", -1);
+        scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+        scr_text("Ai tesiog senukas, kuris prižiūri šias teritorijas", "Mentor", -1);
+        scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+        scr_text("Pamačiau, kad tave persikiojo keli padarai.", "Mentor", -1);
+        scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+        scr_text("Ir norėjau pažiūrėti ar tau viskas gerai.", "Mentor", -1);
+        scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+        scr_text("Na, man viskas gerai", "Player_sad"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+        scr_text("O kur pradingo tos pabaisos?", "Player"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+        scr_text("Ehh.", "Mentor", -1);
+        scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+        scr_text("Su jomis susidorojau.", "Mentor", -1);
+        scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+        scr_text("Jei nori pamatyti, gali nueiti į kairę", "Mentor", -1);
+        scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+        scr_text("Uhh, gerai...?", "Player_suprised"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+        scr_text("Aš juo nepasitikiu", "Sword", noone);
+        scr_text_color(0, 100, c_aqua, c_aqua, c_white, c_white);
+        scr_text_float(0, 100);
+        scr_text("Viskas yra gerai", "Mentor", -1);
+        scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+        scr_text("Gali manimi pasitikėti.", "Mentor", -1);
+        scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+        scr_text("Kaip jis mane girdėjo...?", "Sword", noone);
+        scr_text_color(0, 100, c_aqua, c_aqua, c_white, c_white);
+        scr_text_float(0, 100);
+        scr_text("Aš jau pripratęs girdėti kitų daiktus kalbant.", "Mentor", -1);
+        scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+        scr_text("Tai paprastas dalykas čia?", "Player_confused"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+        scr_text("Na...", "Mentor", -1);
+        scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+        scr_text("Žiūrėk, aš mielai pliurpčiau apie šitai ilgai.", "Mentor", -1);
+        scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+        scr_text("Bet čia nepatogi vieta tam", "Mentor", -1);
+        scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+        scr_text("Gali mane sutikti miestelyje, kuris yra netoli. Tesiog eik toliau į dešinę.", "Mentor", -1);
+        scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+        break;
+    
+    case "long_journey_ahead":
+        scr_text("Visa šitai jaučiasi keista", "Player"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+        scr_text("Bet ir įdomiai", "Player"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+        scr_text("Jaučiu, kad turėsime ilgą kelionę iki namų", "Player_sad"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+        scr_text("Ir visą jos laiką, aš tau padėsiu.", "Sword", noone);
+        scr_text_color(0, 100, c_aqua, c_aqua, c_white, c_white);
+        scr_text_float(0, 100);
+        scr_text("Ačiū.", "Player_sad"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+        break;
+        
+        
+    case "enemy_corpses":
+        scr_text("Regis tas senukas moka kovoti", "Sword", noone);
+        scr_text_color(0, 100, c_aqua, c_aqua, c_white, c_white);
+        scr_text_float(0, 100);
+        scr_text("Geriau būti jo pusėje, mūsų abiejų labui", "Sword", noone);
+        scr_text_color(0, 100, c_aqua, c_aqua, c_white, c_white);
+        scr_text_float(0, 100);  
+        scr_text("Nemanau, kad jis yra taip pavojingas. Jis atrodo gana draugiškas tiems kurie nėra...", "Player"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);      
+        scr_text("Padarai, kaip šitie...", "Player"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+        break;
+    
+    case "fisherman":
+        
+        
+        
     
         
         

@@ -1,7 +1,7 @@
 var _hor = keyboard_check(ord("D")) - keyboard_check(ord("A"));
 var _ver = keyboard_check(ord("S")) - keyboard_check(ord("W"));
 
-
+if (global.game_state == GAME_STATE.NORMAL) {
     if (kb_x != 0 || kb_y != 0) {
     // Try moving with collision
     move_and_collide(kb_x, kb_y, [tilemap]); // tilemap = Tiles_Col's tilemap ID
@@ -80,8 +80,17 @@ if (mouse_check_button_pressed(mb_right) && !instance_exists(obj_parry))
 if (!can_move) {
     _hor = 0;
     _ver = 0;
+}} else {
+    // Stop movement if not in NORMAL state
+    hsp = 0;
+    vsp = 0;
+    // Potentially update animation to idle here
 }
 
+// --- HUD FADE LOGIC ---
+var _target_alpha = (global.game_state == GAME_STATE.NORMAL) ? 1 : 0;
+hud_alpha = lerp(hud_alpha, _target_alpha, 0.05);
+if (hud_alpha < 0.01) hud_alpha = 0;
 
 
 

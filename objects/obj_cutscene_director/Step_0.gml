@@ -54,7 +54,7 @@ switch (cutscene_id) {
                 
             // --- PHASE 2: SPAWN FIRST TEXTBOX ("first_enemy") ---
             case 2:
-                create_textbox(text_id); 
+                create_textbox("first_enemy"); 
                 state = 3;
                 break;
                 
@@ -245,4 +245,174 @@ switch (cutscene_id) {
                 break;
         }
         break;
+    
+    // ---------------------------------------------------------
+    // CUTSCENE TYPE 3: Mentor Meeting (Move, Pan, Talk, Fade)
+    // ---------------------------------------------------------
+    case 3:
+        switch (state) {
+            
+            // --- PHASE 0: SETUP ---
+            case 0:
+                camera_set_view_target(cam, noone);
+                fade_color = c_black; 
+                
+                // Find the player (Ensure you are looking for the correct one!)
+                if (instance_exists(obj_player)) {
+                    player_start_x = obj_player.x;
+                    player_start_y = obj_player.y;
+                    
+                    target_x = player_start_x; 
+                    target_y = player_start_y + 80; 
+                    
+                    // DEBUG: Check the Console to see these values!
+                    show_debug_message("Setup Success! Start Y: " + string(player_start_y) + " | Target Y: " + string(target_y));
+                }
+                else {
+                    show_debug_message("CRITICAL ERROR: obj_player does not exist!");
+                }
+                
+                state = 1;
+                break;
+
+            // --- PHASE 1: DIALOGUE 1 ("mentor_meet") ---
+            case 1:
+                create_textbox(text_id); // "mentor_meet"
+                state = 2;
+                break;
+                
+            // --- PHASE 2: WAIT FOR TEXT, THEN MOVE PLAYER ---
+            case 2:
+                if (!instance_exists(obj_textbox)) {
+                    
+                    // 1. Set Sprite (Only once!)
+                    if (obj_player.sprite_index != spr_player_walk_down) {
+                        obj_player.sprite_index = spr_player_walk_down;
+                        obj_player.image_speed = 1;
+                    }
+                    
+                    // 2. Move Player
+                    var _spd = 1; 
+                    
+                    // Move Down
+                    if (obj_player.y < target_y) {
+                        obj_player.y += _spd;
+                        
+                        // DEBUG: Uncomment if still stuck to see position updating
+                        // show_debug_message("Moving... Y: " + string(obj_player.y) + " / " + string(target_y));
+                    } 
+                    else {
+                        // 3. Reached Destination
+                        obj_player.y = target_y; // Snap to exact pixel
+                        
+                        // Set Idle Sprite
+                        obj_player.sprite_index = spr_player_idle_down;
+                        
+                        show_debug_message("Movement Finished. Moving to State 3.");
+                        state = 3;
+                    }
+                }
+                break;
+                
+            // --- PHASE 3: CAMERA PAN DOWN TO MENTOR ---
+            case 3:
+                // Find Mentor Y
+                var _mentor = instance_nearest(obj_player.x, obj_player.y, obj_mentor);
+                if (_mentor != noone) {
+                    // Calculate target cam Y (Center on mentor)
+                    var _view_h_half = camera_get_view_height(cam) / 2;
+                    var _cam_target_y = _mentor.y - _view_h_half;
+                    
+                    var _cur_y = camera_get_view_y(cam);
+                    _cur_y = lerp(_cur_y, _cam_target_y, 0.04); // Slow pan
+                    
+                    camera_set_view_pos(cam, camera_get_view_x(cam), _cur_y);
+                    
+                    // Check if close enough
+                    if (abs(_cam_target_y - _cur_y) < 2) {
+                        state = 4;
+                        timer = 120; // Set timer for 2 seconds (60fps * 2)
+                    }
+                }
+                break;
+
+            // --- PHASE 4: WAIT 2 SECONDS ---
+            case 4:
+                timer--;
+                if (timer <= 0) {
+                    state = 5;
+                }
+                break;
+                
+            // --- PHASE 5: MENTOR SPRITE CHANGE & DIALOGUE 2 ---
+            case 5:
+                var _mentor = instance_nearest(obj_player.x, obj_player.y, obj_mentor);
+                if (_mentor != noone) {
+                    _mentor.sprite_index = spr_mentor_up;
+                }
+                
+                // Trigger specific text ID directly here
+                create_textbox("mentor_meet1"); 
+                
+                state = 6;
+                break;
+
+            // --- PHASE 6: WAIT FOR TEXT, THEN FADE OUT ---
+            case 6:
+                if (!instance_exists(obj_textbox)) {
+                    fade_alpha += 0.02; // Fade to black
+                    if (fade_alpha >= 1) {
+                        fade_alpha = 1;
+                        state = 7;
+                    }
+                }
+                break;
+                
+            // --- PHASE 7: REMOVE MENTOR ---
+            case 7:
+                var _mentor = instance_nearest(obj_player.x, obj_player.y, obj_mentor);
+                if (_mentor != noone) {
+                    instance_destroy(_mentor);
+                }
+                
+                // Setup Camera Return Target (Center on Player)
+                var _view_h_half = camera_get_view_height(cam) / 2;
+                target_y = obj_player.y - _view_h_half; // Target Y for camera
+                
+                state = 8;
+                break;
+
+            // --- PHASE 8: FADE IN (WITHOUT MENTOR) ---
+            case 8:
+                fade_alpha -= 0.02;
+                if (fade_alpha <= 0) {
+                    fade_alpha = 0;
+                    state = 9;
+                }
+                break;
+
+            // --- PHASE 9: CAMERA SLOWLY PANS BACK TO PLAYER ---
+            case 9:
+                var _cur_y = camera_get_view_y(cam);
+                _cur_y = lerp(_cur_y, target_y, 0.05);
+                
+                camera_set_view_pos(cam, camera_get_view_x(cam), _cur_y);
+                
+                if (abs(target_y - _cur_y) < 2) {
+                    state = 10;
+                }
+                break;
+
+            // --- PHASE 10: CLEANUP ---
+            case 10:
+                // Mark the event as finished so he never appears again
+                global.mentor_event_done = true; 
+                
+                camera_set_view_target(cam, obj_player);
+                global.game_state = GAME_STATE.NORMAL;
+                instance_destroy();
+                break;
+        }
+        break;
+    
 }

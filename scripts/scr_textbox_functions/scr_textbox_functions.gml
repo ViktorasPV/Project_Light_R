@@ -109,6 +109,11 @@ function scr_text(_text){
                     snd[page_number] = snd_talking_low; 
                 break;
             
+            case "fisherman":
+            txtb_spr[page_number] = spr_textbox;
+            snd[page_number] = snd_talking_mid; 
+                break;
+            
             case "Npc_1":
             txtb_spr[page_number] = spr_textbox;
             snd[page_number] = snd_talking_mid; 
