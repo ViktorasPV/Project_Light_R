@@ -59,7 +59,7 @@ if (surface_exists(light_surface)) {
     
     if instance_exists(obj_torch_purple) {
         with(obj_torch_purple) {
-            draw_circle_color(x-cx, y-cy, 24, c_purple, c_black, 0);
+            draw_circle_color(x-cx, y-cy, 48, c_purple, c_black, 0);
         }
     }
     
@@ -108,6 +108,11 @@ if (surface_exists(light_surface)) {
     
     if instance_exists(obj_fisher) {
         with(obj_fisher) {
+            draw_circle_color(x-cx, y-cy, 36, c_purple, c_black, 0);
+        }
+    }
+	if instance_exists(obj_purple_can) {
+        with(obj_purple_can) {
             draw_circle_color(x-cx, y-cy, 36, c_purple, c_black, 0);
         }
     }

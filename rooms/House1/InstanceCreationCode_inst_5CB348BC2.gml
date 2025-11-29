@@ -1,0 +1,1 @@
+audio_play_sound(snd_room_talk, 0, true);

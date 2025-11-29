@@ -25,3 +25,15 @@ if (variable_instance_exists(id, "text_id")) {
         // This is best handled by a "triggered" variable in the Create Event of the trigger
     }
 }
+
+if (!one_time) {
+    // normal reusable
+    create_textbox(text_id);
+}
+else {
+    // one-time
+    if (!passed) {
+        create_textbox(text_id);
+        passed = true;
+    }
+}

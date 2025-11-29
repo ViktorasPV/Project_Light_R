@@ -8,8 +8,8 @@
   "name":"obj_controls",
   "overriddenProperties":[],
   "parent":{
-    "name":"Game systems",
-    "path":"folders/Objects/Game systems.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

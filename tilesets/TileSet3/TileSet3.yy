@@ -8,7 +8,7 @@
     "TileSerialiseData":[],
   },
   "name":"TileSet3",
-  "out_columns":6,
+  "out_columns":8,
   "out_tilehborder":2,
   "out_tilevborder":2,
   "parent":{
@@ -18,8 +18,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"spr_tileset_house",
-    "path":"sprites/spr_tileset_house/spr_tileset_house.yy",
+    "name":"spr_house",
+    "path":"sprites/spr_house/spr_house.yy",
   },
   "spriteNoExport":false,
   "textureGroupId":{
@@ -34,5 +34,5 @@
   "tileWidth":16,
   "tilexoff":0,
   "tileyoff":0,
-  "tile_count":32,
+  "tile_count":64,
 }

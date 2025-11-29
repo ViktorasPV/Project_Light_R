@@ -1,7 +1,7 @@
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
-draw_text(x, y, "Judeti su WASD\nPulti su peles kairiu klavisu\nAtmusti su desiniu peles klavisu")
+draw_text(x, y, "Judeti su [WASD]\nTesti teksta su [SPACE]\nSustabdyti su [ESC]")
 
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);

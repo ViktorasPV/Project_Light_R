@@ -329,8 +329,123 @@ switch(_text_id) {
         
         scr_text("Gerai, supratau.", "fisherman", noone);
         scr_text_color(0, 100, c_purple, c_purple, c_purple, c_purple);
-        
-        break;
+		
+		case "mentor_ask":
+    scr_text("Sugebėjai atvykti čia.", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+	scr_text("Tai regis tu ne tik moki apsiginti.", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+	scr_text("Bet ir norėjai išgirsti daugiau apie šį pasaulį.", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+	scr_text("Ar gal apsigalvojai?", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+    
+    // The options link to specific Text IDs
+    scr_option("Ne, noriu išgirsti", "mentor_accepted");
+    scr_option("Apsigalvojau, noriu toliau keliatui greitai.", "mentor_declined");
+    break;
+
+case "mentor_accepted":
+    scr_text("Puiku. Lauksiu taves šiame namelyje", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+    break;
+
+case "mentor_declined":
+    scr_text("Gerai tada. Lauksiu taves dešiniame kelyje.", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+    break;
+	
+	case "mentor_house_talk":
+	scr_text("Gana jauku čia.", "Player"); 
+    scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+	scr_text("Na, kai visas pasaulis yra toksai tamsus ir pilkas.", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+	scr_text("Bet kas normalaus iš tikro pasaulio atrodys jaukiai.", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+	scr_text("O kaip išvis čia patekau?", "Player"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+		scr_text("To... aš negaliu paaiškinti. Niekas čia nežino kaip jie pateko į šį tamsų pasaulį", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+	scr_text("Hm. Bet ir minėjai kad esi girdėjęs kitų daiktus kalbant. Kaip tai suprast?", "Player"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+		scr_text("Esu sutikes keletą kaip tu. Tie, kaip tu, yra labai sėkmingi.", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+	scr_text("Dauguma į šį pasaulį patenka be daikto su šviesos. Tai jie miršta greičiau.", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+	scr_text("Aj...", "Player_sad"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+		scr_text("Bet į pasaulį tu ir kiti taip pateko, žinai dėl ko?", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+	scr_text("Nes tai dalykas, kuris jums suteikė daugiausia džiaugsmo.", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+	scr_text("Dauguma žmonių turi pažįstama kaip jų didžiausia džiaugsmą.", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+	scr_text("Mama, sunus, močiutė, žmona....", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+	scr_text(" ", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+	scr_text("Anūkė...", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+	scr_text("O man... visada buvo geriausi momentai kai aš žaisdavau su šiuo kardu.", "Player_sad"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+		scr_text("Taip, kaip ir tam žvejui, ta meškerė buvo jo vertingiausias dalykas.", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+	scr_text("Viskas labiau aišku... O kas yra tie padarai?", "Player"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+		scr_text("Jie? Na... Jie yra žmonės kurie prarado visą savo šviesą...", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+	scr_text("Juose nieko nebelieka viduje kaip siela. Ir jie tampa pabaisa, kurių pagrindinė misija yra - gauti daugiau šviesos", "Mentor");
+    scr_text_color(0, 200, c_red, c_red, c_white, c_white);
+	scr_text("O kas jeigu jie gauna šviesos vėl?", "Player_confused"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+	scr_text("Kai tampi tokia pabaisa, daugiau grįžti nebegali... Nepriklausant kiek šviesos surenki...", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+	scr_text("Oh", "Player_suprised"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+		scr_text("Tai jo... neprarask visos savo šviesos čia.", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+	scr_text("Pakankamai pašnekėjom. Galėsime pratęsti kelionę pro dešinijį kelią. Lauksiu tenai taves.", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+		
+		break;
+		
+		case "locked":
+		scr_text("Užrakinta", "Player"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+		break;
+		
+		case "GET OUT":
+		scr_text("EIK LAUK IŠ ČIA!", "Npc_1", noone);
+        scr_text_color(0, 100, c_blue, c_blue, c_blue, c_blue);
+    scr_text("ČIA MANO NAMAI!", "Npc_1", noone);
+        scr_text_color(0, 100, c_blue, c_blue, c_blue, c_blue);
+    scr_text("GERAI, GERAI!", "Player_suprised"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+		break;
+		
+		case "purple":
+		scr_text("Regis čia yra kur jis laiko visą ta šviesą.", "Player"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+		scr_text("Nori pasiimti kažkiek sau?", "Sword", noone);
+        scr_text_color(0, 100, c_aqua, c_aqua, c_white, c_white);
+        scr_text_float(0, 100);
+		scr_text("Jokiu būdu.", "Player_sad"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+		break;
+		
+		case "mentor_room3_talk":
+		scr_text("Noriu įspėti, kad tenai į dešinę, bus naujas padaro tipas.", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+	scr_text("Koksai?", "Player"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+		scr_text("Gana paprastas. Kai pamatai jį, arba realistiškiau... išgirsi, tada jį atmušk arba atakuok.", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+	scr_text("Jis yra labai trapus, tai iš karto mirs.", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+	scr_text("Bet jis labai greitas tai reaguok greitai.", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+		
+		
         
         
         

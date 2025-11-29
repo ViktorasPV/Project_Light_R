@@ -33,6 +33,13 @@ switch (cutscene_id) {
                 
                 // Find the closest enemy to act
                 target_enemy = instance_nearest(start_x, start_y, obj_enemy1);
+				
+				if (instance_exists(obj_player_ns)) {
+                    // Replace 'spr_player_scared' with your actual sprite name
+                    obj_player_ns.sprite_index = spr_player_idle_right_nos; 
+                    obj_player_ns.image_index = 0; // Reset animation to start
+                    obj_player_ns.image_speed = 1; // Play animation
+                }
                 
                 state = 1;
                 break;
@@ -123,6 +130,12 @@ switch (cutscene_id) {
             case 5:
                 // Re-enable built-in Object Following
                 camera_set_view_target(cam, default_target);
+				
+				// NEW: Reset sprite to idle so they don't look scared anymore
+                if (instance_exists(obj_player_ns)) {
+                    obj_player_ns.sprite_index = spr_player_idle_right_nos; 
+                }
+                
                 
                 // Resume Game
                 global.game_state = GAME_STATE.NORMAL;
@@ -149,6 +162,15 @@ switch (cutscene_id) {
             
             // --- PHASE 0: START DIALOGUE ---
             case 0:
+			
+			// NEW: Change sprite before text starts
+                if (instance_exists(obj_player_ns)) {
+                    // Replace with your specific sprite (e.g., reaching out)
+                    obj_player_ns.sprite_index = spr_player_idle_up_nos; 
+                    obj_player_ns.image_index = 0;
+                }
+				
+				
                 create_textbox("First_sword_meet");
                 state = 1;
                 break;
@@ -414,5 +436,223 @@ switch (cutscene_id) {
                 break;
         }
         break;
+	
+
+    // ---------------------------------------------------------
+    // CUTSCENE TYPE 4: Mentor Choice (Branching Path)
+    // ---------------------------------------------------------
+    case 4:
+        switch (state) {
+            
+            // --- PHASE 0: SETUP & ASK QUESTION ---
+            case 0:
+                // Find Mentor
+                target_enemy = instance_nearest(obj_player.x, obj_player.y, obj_mentor);
+                
+                // Start the initial question
+                create_textbox(text_id); // "mentor_ask"
+                
+                show_debug_message("State 0: Started Question");
+                state = 1;
+                break;
+                
+        
+            // --- PHASE 1: LISTEN FOR CHOICE ---
+            case 1:
+                if (instance_exists(obj_textbox)) {
+                    var _current_text = obj_textbox.text[0]; 
+                    
+                    // OPTION A: YES
+                    if (string_pos("Puiku. Lauksiu taves šiame namelyje", _current_text) > 0) {
+                        global.mentor_choice = 1; 
+                        show_debug_message("CHOICE SAVED: YES (1)"); // <--- DEBUG
+                        state = 10; 
+                    }
+                    
+                    // OPTION B: NO
+                    if (string_pos("Gerai tada. Lauksiu taves dešiniame kelyje", _current_text) > 0) {
+                        global.mentor_choice = 2; 
+                        show_debug_message("CHOICE SAVED: NO (2)"); // <--- DEBUG
+                        state = 20; 
+                    }
+                }
+                break;
+
+            // ====================================================
+            // BRANCH A: YES (Left -> Up -> Door Sound -> Disappear)
+            // ====================================================
+            
+            // --- PHASE 10: WAIT FOR "YES" TEXT TO END ---
+            case 10:
+                if (!instance_exists(obj_textbox)) {
+                    // Setup Move 1: Left (x - 129)
+                    if (instance_exists(target_enemy)) {
+                        start_x = target_enemy.x;
+                        start_y = target_enemy.y;
+                        target_x = start_x - 129;
+                        
+                        target_enemy.sprite_index = spr_mentor_left_walk;
+                        target_enemy.image_speed = 1;
+                    }
+                    show_debug_message("State 10: Text closed. Moving Left.");
+                    state = 11;
+                }
+                break;
+                
+            // --- PHASE 11: WALK LEFT ---
+            case 11:
+                if (instance_exists(target_enemy)) {
+                    var _spd = 2;
+                    if (target_enemy.x > target_x) {
+                        target_enemy.x -= _spd;
+                    } else {
+                        target_enemy.x = target_x; // Snap to position
+                        
+                        // Setup Move 2: Up (y - 47)
+                        target_y = target_enemy.y - 47;
+                        target_enemy.sprite_index = spr_mentor_up_walk;
+                        
+                        show_debug_message("State 11: Finished Left. Moving Up.");
+                        state = 12;
+                    }
+                }
+                break;
+                
+            // --- PHASE 12: WALK UP & ENTER DOOR ---
+            case 12:
+                if (instance_exists(target_enemy)) {
+                    var _spd = 2;
+                    if (target_enemy.y > target_y) {
+                        target_enemy.y -= _spd;
+                    } else {
+                        // Finished walking up
+                        
+                        // Play door close sound
+                        audio_play_sound(snd_door_close, 1, false); 
+                        
+                        instance_destroy(target_enemy); 
+                        show_debug_message("State 12: Entered Door. Cleanup.");
+                        state = 30; // Cleanup
+                    }
+                }
+                break;
+
+            // ====================================================
+            // BRANCH B: NO (Walk Right Offscreen)
+            // ====================================================
+
+            // --- PHASE 20: WAIT FOR "NO" TEXT TO END ---
+            case 20:
+                if (!instance_exists(obj_textbox)) {
+                     if (instance_exists(target_enemy)) {
+                        target_enemy.sprite_index = spr_mentor_right_walk; 
+                        target_enemy.image_speed = 1;
+                    }
+                    show_debug_message("State 20: Text closed. Moving Right.");
+                    state = 21;
+                }
+                break;
+
+            // --- PHASE 21: WALK RIGHT FOREVER (Until offscreen) ---
+            case 21:
+                if (instance_exists(target_enemy)) {
+                    // Move X positively (Right)
+                    target_enemy.x += 2; 
+                    
+                    // Calculate the right edge of the camera view
+                    var _cam_right = camera_get_view_x(cam) + camera_get_view_width(cam);
+                    
+                    // If far enough away (e.g., 64 pixels past the right edge)
+                    if (target_enemy.x > _cam_right + 64) {
+                        instance_destroy(target_enemy);
+                        show_debug_message("State 21: Offscreen. Cleanup.");
+                        state = 30;
+                    }
+                }
+                break;
+
+            // ====================================================
+            // CLEANUP
+            // ====================================================
+            case 30:
+                global.mentor_event_done = true; // Mark as done
+                global.game_state = GAME_STATE.NORMAL;
+                instance_destroy();
+                break;
+        }
+        break;
     
+	// ---------------------------------------------------------
+    // CUTSCENE TYPE 5: House Meeting (Yes Path)
+    // ---------------------------------------------------------
+    case 5:
+        switch (state) {
+            
+            // --- PHASE 0: SETUP ---
+            case 0:
+                // 1. Force positions (Just to be safe, though Room Code handles this)
+                if (instance_exists(obj_player)) {
+                    obj_player.x = 128;
+                    obj_player.y = 127;
+                    obj_player.sprite_index = spr_player_idle_right; // Face the mentor
+                }
+                
+                target_enemy = instance_nearest(239, 127, obj_mentor);
+                
+                // 2. Start Dialogue
+                create_textbox("mentor_house_talk"); 
+                
+                state = 1;
+                break;
+                
+            // --- PHASE 1: WAIT FOR TEXT ---
+            case 1:
+                if (!instance_exists(obj_textbox)) {
+                    // Setup movement UP (y - 63)
+                    if (instance_exists(target_enemy)) {
+                        target_y = target_enemy.y - 63;
+                        target_enemy.sprite_index = spr_mentor_up_walk;
+                        target_enemy.image_speed = 1;
+                    }
+                    state = 2;
+                }
+                break;
+                
+            // --- PHASE 2: WALK UP ---
+            case 2:
+                if (instance_exists(target_enemy)) {
+                    var _spd = 2;
+                    if (target_enemy.y > target_y) {
+                        target_enemy.y -= _spd;
+                    } else {
+                        // Finished walking
+                        state = 3;
+                    }
+                }
+                break;
+                
+            // --- PHASE 3: DOOR SOUND & VANISH ---
+            case 3:
+                audio_play_sound(snd_door_close, 1, false);
+                
+                if (instance_exists(target_enemy)) {
+                    instance_destroy(target_enemy);
+                }
+                
+                state = 4;
+                break;
+                
+            // --- PHASE 4: CLEANUP ---
+            case 4:
+                // IMPORTANT: This stops the cutscene from running again
+                global.house_event_done = true; 
+                
+                var cam = view_camera[0];
+                camera_set_view_target(cam, obj_player);
+                
+                global.game_state = GAME_STATE.NORMAL;
+                instance_destroy();
+                break;
+        }
+        break;
 }

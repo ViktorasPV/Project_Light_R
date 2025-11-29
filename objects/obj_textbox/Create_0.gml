@@ -13,6 +13,8 @@ if (instance_number(obj_textbox) > 1) {
     }
 }
 
+text_id_ref = "";
+
 // textbox params
 textbox_height = 63;
 textbox_width  = 223;
