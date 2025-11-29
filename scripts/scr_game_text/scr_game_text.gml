@@ -271,6 +271,68 @@ switch(_text_id) {
         break;
     
     case "fisherman":
+        scr_text("Sveikas", "Player"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+        scr_text("Sveikas. Pirmas kartas čia?", "fisherman", noone);
+        scr_text_color(0, 100, c_purple, c_purple, c_purple, c_purple);
+        scr_text("Taip", "Player_happy"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+        scr_text("Hm. Prisimenu kai aš čia pirmą kartą atvykau. Ši vieta buvo visiškai tuščia.", "fisherman", noone);
+        scr_text_color(0, 100, c_purple, c_purple, c_purple, c_purple);
+        scr_text("Nors tuščia, ši vieta buvo puiki miesteliui pastatyti. Ir ypač žvėjoti.", "fisherman", noone);
+        scr_text_color(0, 100, c_purple, c_purple, c_purple, c_purple);
+        scr_text("Ar tavo meškerė su tavimi irgi kalba?", "Player"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+        scr_text("Ot, net nepastebėjau. Tu turi šviesų daiktą.", "fisherman", noone);
+        scr_text_color(0, 100, c_purple, c_purple, c_purple, c_purple);
+        scr_text("Gražus kardas, bet ir labai svarbus tau.", "fisherman", noone);
+        scr_text_color(0, 100, c_purple, c_purple, c_purple, c_purple);
+        scr_text("Rūpinkis juo kaip savo abejomis akimis. Tau žinok labai pasisekė. Kaip ir man.", "fisherman", noone);
+        scr_text_color(0, 100, c_purple, c_purple, c_purple, c_purple);
+        scr_text("Nes daugumai, to ne įvyko, ir jie liko be šviesos ilgam.", "fisherman", noone);
+        scr_text_color(0, 100, c_purple, c_purple, c_purple, c_purple);
+        scr_text("Senukas kuris čia ateina dažnai gali tau apie tai papasakoti.", "fisherman", noone);
+        scr_text_color(0, 100, c_purple, c_purple, c_purple, c_purple);
+        scr_text("Kaip tik ir ruošiausi", "Player"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+        scr_text("Prieš tau išeinant, gal nori išklausyti kaip šis miestas operuoja?", "fisherman", noone);
+        scr_text_color(0, 100, c_purple, c_purple, c_purple, c_purple);
+        
+        scr_option("Gerai", "fisherman_yes");
+        
+        scr_option("Ne ačiū", "fisherman_no"); 
+        
+        break;
+    
+    case "fisherman_yes":
+        
+        scr_text("Tai matai kaip visos šviesos čia yra tokios pačios spalvos kaip aš?", "fisherman", noone);
+        scr_text_color(0, 100, c_purple, c_purple, c_purple, c_purple);
+        scr_text("Jo, tai pastebėjau.", "Player"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+        scr_text("Tai dėl to, nes aš šiam miestui įteikiu šviesos. Aš žvejoju ne be reikalo čia.", "fisherman", noone);
+        scr_text_color(0, 100, c_purple, c_purple, c_purple, c_purple);
+        scr_text("Kekviena karta kai aš įmetų meškerę į šį ežerą, mano meškerėje kaupiasi šviesos.", "fisherman", noone);
+        scr_text_color(0, 100, c_purple, c_purple, c_purple, c_purple);
+        scr_text("Ir tada perduodu ją miestui.", "fisherman", noone);
+        scr_text_color(0, 100, c_purple, c_purple, c_purple, c_purple);
+        scr_text("Hm, įdomiai.", "Player"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+        scr_text("Tas pats nutinka tavo kardui, kai tu nužudai tas pabaisas.", "fisherman", noone);
+        scr_text_color(0, 100, c_purple, c_purple, c_purple, c_purple);
+        scr_text("Tikiuosi, kad rasi vieta kur panaudoti ją.", "fisherman", noone);
+        scr_text_color(0, 100, c_purple, c_purple, c_purple, c_purple);
+        
+        break;
+    
+    case "fisherman_no":
+        
+        scr_text("Gerai, supratau.", "fisherman", noone);
+        scr_text_color(0, 100, c_purple, c_purple, c_purple, c_purple);
+        
+        break;
+        
+        
         
         
         

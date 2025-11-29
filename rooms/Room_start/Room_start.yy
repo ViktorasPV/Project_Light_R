@@ -26,6 +26,7 @@
     {"name":"inst_6FE4B7B0","path":"rooms/Room_start/Room_start.yy",},
     {"name":"inst_1C32AE58_1","path":"rooms/Room_start/Room_start.yy",},
     {"name":"inst_6CBA5D3","path":"rooms/Room_start/Room_start.yy",},
+    {"name":"inst_32072A70","path":"rooms/Room_start/Room_start.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -76,6 +77,7 @@
         {"$GMRInstance":"v4","%Name":"inst_678BBA09","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_678BBA09","objectId":{"name":"obj_enemy1","path":"objects/obj_enemy1/obj_enemy1.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1920.0,"y":160.0,},
         {"$GMRInstance":"v4","%Name":"inst_2B6A5EF5","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2B6A5EF5","objectId":{"name":"obj_enemy1","path":"objects/obj_enemy1/obj_enemy1.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1824.0,"y":224.0,},
         {"$GMRInstance":"v4","%Name":"inst_168D4706","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_168D4706","objectId":{"name":"obj_sword","path":"objects/obj_sword/obj_sword.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2656.0,"y":-32.0,},
+        {"$GMRInstance":"v4","%Name":"inst_32072A70","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_32072A70","objectId":{"name":"obj_right_sign","path":"objects/obj_right_sign/obj_right_sign.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.5,"scaleY":1.5,"x":1216.0,"y":128.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Tiles_1","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_1","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":48,"SerialiseWidth":188,"TileCompressedData":[
           -16,0,-36,-2147483648,-31,0,-80,-2147483648,-7,10,-18,-2147483648,-16,0,-36,-2147483648,-31,0,-80,-2147483648,

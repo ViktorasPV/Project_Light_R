@@ -110,7 +110,7 @@ function scr_text(_text){
                 break;
             
             case "fisherman":
-            txtb_spr[page_number] = spr_textbox;
+            txtb_spr[page_number] = spr_textbox_purple;
             snd[page_number] = snd_talking_mid; 
                 break;
             

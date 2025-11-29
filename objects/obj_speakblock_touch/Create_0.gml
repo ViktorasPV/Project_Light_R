@@ -1,5 +1,6 @@
-text_id = ""; // defined in Variable Definitions
-active = true;
+text_id = "";
+one_time = false; // Default is reusable
+active = true;    // Ready to be triggered
 
 passed = false;
 one_time = false;

@@ -98,6 +98,14 @@ if (surface_exists(light_surface)) {
         }
     }
     
+    if instance_exists(obj_right_sign) {
+        with(obj_right_sign) {
+            draw_circle_color(x-cx, y-cy, 36, c_red, c_black, 0);
+        }
+    }
+    
+    
+    
     
     
     surface_reset_target();

@@ -1,13 +1,23 @@
-if (place_meeting(x, y, obj_player)) {
+// Check collision
+if (place_meeting(x, y, obj_player_ns)) {
     
-    // Only trigger if we are currently active (haven't triggered yet for this touch)
+    // Only trigger if active
     if (active == true) {
         create_textbox(text_id);
-        active = false; // Turn off so we don't spawn 60 textboxes a second
+        active = false; // Turn off immediately to prevent spamming
+        
+        // --- ONE TIME LOGIC ---
+        if (one_time == true) {
+            instance_destroy(); // Destroy the trigger completely
+        }
     }
-    
+
 } else {
     // Player is NOT touching the block
-    // Reset so it can be triggered again if they walk away and come back
-    active = true; 
+    
+    // Only reset the trigger if it is REUSABLE.
+    // If it is one_time, we don't care (and if we used instance_destroy above, this won't run anyway).
+    if (one_time == false) {
+        active = true; 
+    }
 }
