@@ -115,6 +115,10 @@ if (surface_exists(light_surface)) {
         with(obj_purple_can) {
             draw_circle_color(x-cx, y-cy, 36, c_purple, c_black, 0);
         }
+    }if instance_exists(obj_city) {
+        with(obj_city) {
+            draw_circle_color(x-cx, y-cy, 126, c_aqua, c_black, 0);
+        }
     }
     
     

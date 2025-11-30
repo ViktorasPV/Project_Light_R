@@ -2,6 +2,7 @@ move_speed = 1;
 
 can_move = true;
 
+max_hp = 20;
 hp = 20;
 hp_total = hp;
 damage = 1;
@@ -15,6 +16,9 @@ tilemap = layer_tilemap_get_id("Tiles_Col");
 kb_x = 0;
 kb_y = 0;
 kb_timer = 0;
+
+regen_timer = 0;       
+regen_cooldown = 60;
 
 hud_alpha = 1;
 

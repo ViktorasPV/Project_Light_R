@@ -10,11 +10,5 @@ if (alarm[0] < 0)
     kb_y = lengthdir_y(kb_strength, dir);
     kb_timer = 10; // knockback lasts 10 steps
 	
-	if (hp <= 0)
-	{
-		room_restart();
-        hp = 10;
-        x = 62;
-        y = 95;
-	}
+	
 }

@@ -25,6 +25,7 @@
     {"name":"inst_51E1B11B","path":"rooms/Room_start_1/Room_start_1.yy",},
     {"name":"inst_4EC5F53F","path":"rooms/Room_start_1/Room_start_1.yy",},
     {"name":"inst_34B6E45","path":"rooms/Room_start_1/Room_start_1.yy",},
+    {"name":"inst_4C61A2C9","path":"rooms/Room_start_1/Room_start_1.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -34,7 +35,8 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_cutscene_trigger","path":"objects/obj_cutscene_trigger/obj_cutscene_trigger.yy",},"propertyId":{"name":"cutscene_id","path":"objects/obj_cutscene_trigger/obj_cutscene_trigger.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"2",},
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_cutscene_trigger","path":"objects/obj_cutscene_trigger/obj_cutscene_trigger.yy",},"propertyId":{"name":"text_id","path":"objects/obj_cutscene_trigger/obj_cutscene_trigger.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"First_sword_meet\"",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":6.0,"scaleY":0.4,"x":192.0,"y":192.0,},
-      ],"layers":[],"name":"Invisible_Effects","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":false,},
+        {"$GMRInstance":"v4","%Name":"inst_4C61A2C9","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4C61A2C9","objectId":{"name":"obj_spawn_point","path":"objects/obj_spawn_point/obj_spawn_point.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":192.0,"y":960.0,},
+      ],"layers":[],"name":"Invisible_Effects","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Tiles_col","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_col","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":63,"SerialiseWidth":25,"TileCompressedData":[
           -128,0,-2,1,-15,0,-2,1,-6,0,-2,1,-15,0,-2,1,-6,0,-2,1,-15,0,-2,1,-6,0,-2,1,-6,0,-2,1,-7,0,-2,1,-6,0,
           -2,1,-6,0,-2,1,-7,0,-2,1,-6,0,-2,1,-15,0,-2,1,-6,0,-2,1,-15,0,-2,1,-6,0,-2,1,-15,0,-2,1,-6,0,-2,1,-15,

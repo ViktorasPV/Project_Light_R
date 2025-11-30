@@ -75,4 +75,33 @@ hud_alpha = lerp(hud_alpha, _target_alpha, 0.05);
 
 // Snap to 0 if very close to avoid ghosting
 if (hud_alpha < 0.01) hud_alpha = 0;
+    
 
+// --- HEALTH REGENERATION ---
+
+// 1. Define "Standing Still"
+// We check if position is exactly the same as the previous frame
+var _is_standing_still = (x == xprevious && y == yprevious);
+
+// 2. Regen Logic
+if (_is_standing_still && hp < max_hp && hp > 0) {
+    
+    regen_timer++; // Count up
+    
+    // If timer hits the limit (e.g., 1 second passed)
+    if (regen_timer >= regen_cooldown) {
+        hp += 0.5;           // Add 1 HP
+        regen_timer = 0;   // Reset timer
+        
+        // Cap HP so it doesn't go over the max
+        if (hp > max_hp) hp = max_hp;
+        
+        // Optional: Play a tiny sound or visual effect?
+        // audio_play_sound(snd_heal, 1, false); 
+    }
+} 
+else {
+    // If we move, reset the progress! 
+    // This forces the player to stop continuously to get the benefit.
+    regen_timer = 0;
+}

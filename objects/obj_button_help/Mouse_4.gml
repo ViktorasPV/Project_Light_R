@@ -1,3 +1,7 @@
+if (instance_exists(obj_credits))
+{
+    instance_destroy(obj_credits);
+}
 if (instance_exists(obj_controls))
 {
     instance_destroy(obj_controls);

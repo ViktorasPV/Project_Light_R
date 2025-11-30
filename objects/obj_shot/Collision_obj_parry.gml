@@ -9,6 +9,7 @@ if (creator != noone && instance_exists(creator)) {
 }
     audio_play_sound(snd_parry, 5, false);
     parried = true;
+    obj_player.can_parry = true;
     // Reverse direction
     direction += 180; // Turn around
     

@@ -1,27 +1,33 @@
 switch (state) {
     // --- PHASE 0: FADE OUT MENU & STOP MUSIC ---
     case 0:
-        alpha += 0.02; // Fade speed
+        alpha += 0.02; 
         
-        // Lower volume of menu music if playing
-        // (Assuming you use audio groups, otherwise use audio_sound_gain on specific ID)
+        // We fade out the volume...
         audio_group_set_gain(audiogroup_default, 0, 500); 
 
         if (alpha >= 1) {
             alpha = 1;
-            audio_stop_all(); // Stop menu music completely
+            
+            // 1. Stop the music completely
+            audio_stop_all(); 
+            
+            // 2. IMPORTANT: Reset the Volume back to 1 (100%)
+            // If we don't do this, the video will play at 0 volume!
+            audio_group_set_gain(audiogroup_default, 1, 0); 
+            
             state = 1;
         }
         break;
 
     // --- PHASE 1: START VIDEO ---
     case 1:
+        // Now that volume is back to 1, open the video
         video_open(video_name);
-        video_enable_loop(false); // Don't loop the cutscene
+        video_enable_loop(false); 
         state = 2;
         break;
-
-    // --- PHASE 2: WATCH VIDEO ---
+    
     case 2:
         // Get status
         var _status = video_get_status();

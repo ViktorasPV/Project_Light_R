@@ -6,15 +6,10 @@ if (alarm[0] < 0)
     var dir = point_direction(other.x, other.y, x, y);
     var kb_strength = 4;
     
+    
     kb_x = lengthdir_x(kb_strength, dir);
     kb_y = lengthdir_y(kb_strength, dir);
     kb_timer = 10; // knockback lasts 10 steps
 	
-	if (hp <= 0)
-	{
-        hp = 10;
-        x = 62;
-        y = 95;
-		room_restart();
-	}
+	
 }

@@ -449,6 +449,51 @@ case "mentor_declined":
 	
 	break;
 		
+
+
+    case "not_again":
+        scr_text("Jokiu būdu ten grįžau.", "Player_suprised"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+        break;
+    
+    case "i_warned_you":
+        scr_text("Aš įspėjau tave.", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+        scr_text("Taip... tu įspėjai...", "Player_suprised"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+        break;
+    
+    case "at_last":
+        scr_text("Gražus miestas ar ne?", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+        scr_text("Jo...", "Player_suprised"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+        scr_text("Tenai dauguma kurie pateko čia, sustojo. Visi kaip tu norėjo eiti toliau kad pabėgti iš čia.", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+        scr_text("Bet po to, ten pabaisos ir kiti dalykai yra žymiai pavojingesni, tai dauguma nebegali tęsti savo keliones.", "Mentor");
+    scr_text_color(0, 300, c_red, c_red, c_white, c_white);
+        scr_text("Na bent sugebėjau įrodyti kad moku kovoti.", "Player_sad"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+        scr_text("Aš tikiu kad mes galime iš čia ištrūkti.", "Player_sad"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+        scr_text("...", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+        scr_text("Malonu girdėti.", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+        scr_text("Žmonės kurie turi su savimi daiktą čia, dažniausiai nenori iš čia pabėgti. Jiems jugi tie daiktai daugiausia džiaugsmo ir suteikė. Jie nenori prarasti to...", "Mentor");
+    scr_text_color(0, 300, c_red, c_red, c_white, c_white);
+        scr_text("O kodėl tu nori iš čia pabėgti...? Kas tavęs laukia tikrame pasaulyje?", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+        scr_text("...", "Player"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+        scr_text("Turiu vilties, kad grįžęs... rasiu kažką kas man giliai rūpės.", "Player"); 
+        scr_text_color(0, 100, c_aqua, c_aqua, c_aqua, c_aqua);
+        scr_text("...Gerai žinoti kad tu turi vilites... Aš tavimi tikiu, nes TU tikrai turi potencialo.", "Mentor");
+    scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+        scr_text("Atrodo kad klydau.. Jis yra malonus senukas...", "Sword", noone);
+        scr_text_color(0, 100, c_aqua, c_aqua, c_white, c_white);
+        scr_text_float(0, 100);
+        
 		
         
         

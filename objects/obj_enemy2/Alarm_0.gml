@@ -5,8 +5,7 @@ if (instance_exists(obj_player) && distance_to_object(obj_player) < distance_to_
         audio_sound_pitch(snd_shot_creation, random_range(0.9, 1.15));
         sprite_index = spr_enemy2_a;
         shot_exist = true;
-        var shot = instance_create_depth(x, y - 2, depth, obj_shot);
-        shot.creator = id; // Store reference to the enemy that fired the shot
+        
 }
 else
 {
@@ -14,4 +13,4 @@ else
 	target_y = random_range(ystart - 100, ystart + 100);
 }
 
-alarm[0] = 60;
+alarm[0] = 240;

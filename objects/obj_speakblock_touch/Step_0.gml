@@ -1,5 +1,5 @@
 // Check collision
-if (place_meeting(x, y, obj_player_ns)) {
+if (place_meeting(x, y, obj_player)) {
     
     // Only trigger if active
     if (active == true) {

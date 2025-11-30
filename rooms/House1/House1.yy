@@ -13,7 +13,6 @@
     {"name":"inst_1DCF1333_2","path":"rooms/House1/House1.yy",},
     {"name":"inst_1C32AE58_2","path":"rooms/House1/House1.yy",},
     {"name":"inst_4EEACCC2","path":"rooms/House1/House1.yy",},
-    {"name":"inst_56ED064C","path":"rooms/House1/House1.yy",},
     {"name":"inst_2776ED9E","path":"rooms/House1/House1.yy",},
     {"name":"inst_6D47E3DF","path":"rooms/House1/House1.yy",},
     {"name":"inst_606F2D02","path":"rooms/House1/House1.yy",},
@@ -47,7 +46,6 @@
         {"name":"g_GlowAlpha","type":0,"value":"1",},
       ],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"v4","%Name":"inst_56ED064C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_56ED064C","objectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.5,"scaleY":1.5,"x":128.0,"y":128.0,},
         {"$GMRInstance":"v4","%Name":"inst_2776ED9E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2776ED9E","objectId":{"name":"obj_table","path":"objects/obj_table/obj_table.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":3.0,"x":160.0,"y":111.0,},
         {"$GMRInstance":"v4","%Name":"inst_6D47E3DF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6D47E3DF","objectId":{"name":"obj_mentor","path":"objects/obj_mentor/obj_mentor.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.5,"scaleY":1.5,"x":256.0,"y":128.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
