@@ -509,7 +509,7 @@ switch (cutscene_id) {
                         target_enemy.x = target_x; // Snap to position
                         
                         // Setup Move 2: Up (y - 47)
-                        target_y = target_enemy.y - 47;
+                        target_y = target_enemy.y - 40;
                         target_enemy.sprite_index = spr_mentor_up_walk;
                         
                         show_debug_message("State 11: Finished Left. Moving Up.");

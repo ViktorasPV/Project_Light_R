@@ -330,6 +330,8 @@ switch(_text_id) {
         scr_text("Gerai, supratau.", "fisherman", noone);
         scr_text_color(0, 100, c_purple, c_purple, c_purple, c_purple);
 		
+		break;
+		
 		case "mentor_ask":
     scr_text("Sugebėjai atvykti čia.", "Mentor");
     scr_text_color(0, 100, c_red, c_red, c_white, c_white);
@@ -444,6 +446,8 @@ case "mentor_declined":
     scr_text_color(0, 100, c_red, c_red, c_white, c_white);
 	scr_text("Bet jis labai greitas tai reaguok greitai.", "Mentor");
     scr_text_color(0, 100, c_red, c_red, c_white, c_white);
+	
+	break;
 		
 		
         
